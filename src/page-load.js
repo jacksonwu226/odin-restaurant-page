@@ -1,17 +1,19 @@
 export default function loadPage(id){
-    let content;
-    let header;
-    let footer;
-    let navBar;
-    let tabContent;
-
+    let content;    // parent div where page belongs
+    let header;     // header reference
+    let footer;     // footer reference
+    let navBar;     // reference to navBar
+    let tabContent; // reference to content for each tab
+    // initial run
     const init = () => {
         cacheDom();
         loadPage();
     }
+    // get relevant dom elements
     const cacheDom = () => {
         content = document.getElementById('content')
     }
+    // loads the page
     const loadPage = () => {
         header = createHeader('Hisui Sushi');
         navBar = createNavBar();
@@ -23,6 +25,7 @@ export default function loadPage(id){
         content.appendChild(tabContent);
         content.appendChild(footer);
     }
+    // creates the header
     const createHeader = (title) => {
         const header = document.createElement('div');
         const headerTitle = document.createElement('h1');
@@ -35,6 +38,7 @@ export default function loadPage(id){
 
         return header;
     }
+    // creates the navigation bar
     const createNavBar = () => {
         const navBar = document.createElement('nav');
         navBar.setAttribute('id', 'nav-bar');
@@ -48,6 +52,7 @@ export default function loadPage(id){
         navBar.appendChild(contactBtn);
         return navBar;
     }
+    // creates a functional tab button
     const createTabBtn = (id, text) => {
         const newBtn = document.createElement('button');
         const span = document.createElement('span');
@@ -61,6 +66,7 @@ export default function loadPage(id){
 
         return newBtn;
     }
+    // Creates the footer for the webpage
     const createFooter = (text) => {
         const footer = document.createElement('footer');
         footer.classList.add('footer');
