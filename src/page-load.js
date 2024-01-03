@@ -11,7 +11,7 @@ export default function loadPage(id){
     }
     // get relevant dom elements
     const cacheDom = () => {
-        content = document.getElementById('content')
+        content = document.getElementById(id)
     }
     // loads the page
     const loadPage = () => {
@@ -19,7 +19,7 @@ export default function loadPage(id){
         navBar = createNavBar();
         footer = createFooter('Copyright © ' + new Date().getFullYear() + " Jackson Wu");
         tabContent = createTabContent();
-
+        
         content.appendChild(header);
         content.appendChild(navBar);
         content.appendChild(tabContent);
@@ -80,5 +80,11 @@ export default function loadPage(id){
         tabContent.classList.add('tab-content');
         return tabContent;
     }
-    return{init, content, header, footer, navBar, tabContent};
+    const clearTabContent = () => {
+        while(tabContent.firstChild){
+            tabContent.removeChild(tabContent.firstChild);
+        }
+    }
+    init();
+    return{content, header, footer, navBar, tabContent, clearTabContent};
 }
