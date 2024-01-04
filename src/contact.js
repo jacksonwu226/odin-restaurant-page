@@ -1,15 +1,17 @@
-export default function contact(){
+export default function contactPage(){
     let contact;
     let contactDOM;
     const init = () =>{
-        cacheDom();
         loadContacts();
     }
-    const cacheDom = () => {
-    }
     const loadContacts = () => {
-        contact = createContact('Hisui Sushi', '000-000-0000', 'Folsom, CA');
-        contactDOM = createContactCardDOM(contact);
+        const contactCard = createContact('Hisui Sushi', '000-000-0000', 'Folsom, CA');
+        const contactCardDOM = createContactCardDOM(contactCard);
+
+        contactDOM = document.createElement('div');
+        contactDOM.setAttribute('id', 'contact-page');
+        contactDOM.classList.add('content-page');
+        contactDOM.appendChild(contactCardDOM)
     }
     const showContactsDOM = (container) => {
         container.appendChild(contactDOM);

@@ -46,7 +46,6 @@ function pageController() {
         newDiv.setAttribute('id','content');
         const body = document.body;
         body.append(newDiv);
-        console.log(newDiv);
     }
     init();
 }

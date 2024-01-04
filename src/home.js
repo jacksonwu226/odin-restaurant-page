@@ -5,24 +5,24 @@ export default function homePage(){
     let hours;
 
     let homeDOM;
-    let titleDOM;
+    // let titleDOM;
     let aboutDOM;
     let hoursDOM;
     const init = () => {
-        title = 'Hisui Sushi';
+        // title = 'Greetings! From Hisui Sushi';
         about = 'Combining traditional cuisine with a creative & contemporary flair, we focus on serving our foods in a health conscious manner, using only the freshest & the healthiest ingredients.';
         hours = ['11:00 AM - 02:00 PM', '04:30 PM - 08:30 PM'];
         loadDOM();
     }
     const loadDOM = () => {
-        titleDOM = createTitle(title);
+        // titleDOM = createTitle(title);
         aboutDOM = createAbout(about);
         hoursDOM = createHours(hours);
         
         homeDOM = document.createElement('div');
         homeDOM.setAttribute('id', 'home-page');
         homeDOM.classList.add('content-page');
-        homeDOM.appendChild(titleDOM);
+        // homeDOM.appendChild(titleDOM);
         homeDOM.appendChild(aboutDOM);
         homeDOM.appendChild(hoursDOM);
     }
