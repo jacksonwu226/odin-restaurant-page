@@ -1,6 +1,6 @@
 import loadPage from './page-load.js';
 import contactPage from './contact.js';
-
+import homePage from './home.js';
 function pageController() {
     let tabContent;
     let homeBtn;
@@ -12,7 +12,6 @@ function pageController() {
     let menu;
 
     const init = () => {
-        console.log(1)
         createContent();
         load();
         cacheDOM();
@@ -27,10 +26,12 @@ function pageController() {
     const load = () =>{
         page = loadPage('content');
         contact = contactPage()
+        home =  homePage();
     }
     const bindEvents = () => {
         homeBtn.addEventListener('click', () => {
             page.clearTabContent();
+            home.showHomeDOM(tabContent);
         })
         menuBtn.addEventListener('click', () => {
             page.clearTabContent();
