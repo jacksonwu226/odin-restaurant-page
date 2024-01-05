@@ -4,6 +4,7 @@ export default function loadPage(id){
     let footer;     // footer reference
     let navBar;     // reference to navBar
     let tabContent; // reference to content for each tab
+    let navContent;
     // initial run
     const init = () => {
         cacheDom();
@@ -19,7 +20,7 @@ export default function loadPage(id){
         navBar = createNavBar();
         footer = createFooter('Copyright © ' + new Date().getFullYear() + " Jackson Wu");
         tabContent = createTabContent();
-        
+
         content.appendChild(header);
         content.appendChild(navBar);
         content.appendChild(tabContent);

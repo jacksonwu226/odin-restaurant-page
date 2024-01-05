@@ -2,6 +2,10 @@ import loadPage from './page-load.js';
 import contactPage from './contact.js';
 import homePage from './home.js';
 import menuPage from './menu.js';
+
+import './styles/style.css';
+
+
 function pageController() {
     let tabContent;
     let homeBtn;
@@ -17,6 +21,7 @@ function pageController() {
         load();
         cacheDOM();
         bindEvents();
+        home.showHomeDOM(tabContent);
     }
     const cacheDOM = () => {
         tabContent = document.querySelector(".tab-content")
